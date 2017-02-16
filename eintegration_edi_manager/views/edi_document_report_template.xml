@@ -1,0 +1,29 @@
+<openerp>
+	<data>
+
+		<report id="edi_document_report" model="edi.document" string="EDI Document Report"
+			report_type="qweb-html" name="eintegration_edi_manager.edi_document_report_template"
+			attachment_use="true" file="EDI Document Data" />
+
+		<!-- ______________________________________________________________________ -->
+		<!-- EDI Document: EDI document report template -->
+		<template id="edi_document_report_template">
+			<t t-foreach="docs" t-as="o">
+&lt;?xml version='1.0'?&gt;
+&lt;M_e-RDS_<t t-esc="o.message_type.type_id.name" />&gt;
+	&lt;R_STEU&gt;
+		&lt;F_RECID_STEU&gt;&lt;![CDATA[STEU]]&gt;&lt;/F_RECID_STEU&gt;
+		&lt;F_STEU_NACHRICHTENTYP&gt;&lt;![CDATA[<t t-esc="o.message_type.type_id.name" />]]&gt;&lt;/F_STEU_NACHRICHTENTYP&gt;
+		&lt;F_STEU_ABSENDERKENNUNG&gt;&lt;![CDATA[<t t-esc="o.sender.gln" />]]&gt;&lt;/F_STEU_ABSENDERKENNUNG&gt;
+		&lt;F_STEU_EMPFAENGERKENNUNG&gt;&lt;![CDATA[<t t-esc="o.recipient.gln" />]]&gt;&lt;/F_STEU_EMPFAENGERKENNUNG&gt;
+		&lt;F_STEU_ERSTELLUNGSDATUM&gt;&lt;![CDATA[<t t-esc="o.create_date" />]]&gt;&lt;/F_STEU_ERSTELLUNGSDATUM&gt;
+	&lt;/R_STEU&gt;
+    &lt;G_NACHRICHT&gt;
+		&lt;MESSAGEBODY/&gt;
+	&lt;/G_NACHRICHT&gt;
+&lt;/M_e-RDS_<t t-esc="o.message_type.type_id.name" />&gt;
+			</t>
+		</template>
+
+	</data>
+</openerp>

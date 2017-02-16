@@ -1,0 +1,61 @@
+<openerp>
+	<data>
+
+		<!-- ______________________________________________________________________ -->
+		<!-- TreeView for edi_message -->
+
+		<record id="edi_message_tree" model="ir.ui.view">
+			<field name="name">e-integration: EDI message tree</field>
+			<field name="model">edi.message</field>
+			<field name="type">tree</field>
+			<field name="priority">20</field>
+			<field name="arch" type="xml">
+				<tree string="EDI Messages" editable="bottom">
+					<field name="name" />
+					<field name="type_id" />
+					<field name="organisation_id" />
+					<field name="format_id" />
+					<field name="version_id" />
+					<field name="variant_id" />
+					<field name="direction" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- ______________________________________________________________________ -->
+		<!-- FormView for edi_message -->
+
+		<record id="edi_message_form" model="ir.ui.view">
+			<field name="name">e-integration: EDI message form</field>
+			<field name="model">edi.message</field>
+			<field name="type">form</field>
+			<field name="priority">20</field>
+			<field name="arch" type="xml">
+				<form string="EDI Messages" editable="bottom">
+					<group>
+						<field name="name" />
+						<field name="type_id" />
+						<field name="organisation_id" />
+						<field name="format_id" />
+						<field name="version_id" />
+						<field name="variant_id" />
+						<field name="direction" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_list_edi_messages">
+			<field name="name">EDI Messages Overview</field>
+			<field name="res_model">edi.message</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem name="EDI" id="root_menu_edi" sequence="450" />
+		<menuitem name="EDI" id="menu_edi_messages_management"
+			parent="root_menu_edi" sequence="10" />
+		<menuitem id="menu_edi_messages" parent="menu_edi_messages_management"
+			name="EDI Messages" sequence="5" action="action_list_edi_messages" />
+
+	</data>
+</openerp>

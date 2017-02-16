@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+	<t t-name="export_widget_button">
+		<p>
+			<button type="object" id="bselect">Select Related Entities</button>
+		</p>
+		<div id="export_div" style="display:none;" />
+	</t>
+	<t t-name="fields_export">
+		<table class="oe_export" style="background-color: #F3F3F3;">
+		    <tr>
+		        <th>Available Relationships</th>
+		        <th/>
+		        <th>
+		            Selected Relationships
+		            <div id="savenewlist"></div>
+		            <div id="ExistsExportList"></div>
+		        </th>
+		    </tr>
+		    <tr style="height: 400px;">
+		        <td class="oe_export_fields_selector_left">
+		            <div id="left_field_panel">
+		            </div>
+		        </td>
+		        <td class="oe_export_fields_selector_center">
+		            <button class="oe_button" id="add_field">Add</button>
+		            <button class="oe_button" id="remove_field">Remove</button>
+		            <button class="oe_button" id="remove_all_field">Remove All</button>
+		        </td>
+		        <td class="oe_export_fields_selector_right">
+		            <select name="fields_list" id="fields_list"
+		                    multiple="multiple"></select>
+		        </td>
+		    </tr>
+		    <tr>
+				<td colspan="3">
+					<button id="export_fields" type="object">Confirm</button>
+					<button id="hide_fields" type="object">Close</button>
+				</td>
+		    </tr>
+		</table>
+	</t>
+</templates>

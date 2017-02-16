@@ -1,0 +1,49 @@
+<openerp>
+<data>
+
+		<!-- ______________________________________________________________________ -->
+		<!-- TreeView for edi_communication											-->
+
+		<record id="edi_communication_tree" model="ir.ui.view">
+			<field name="name">e-integration: EDI communication tree</field>
+			<field name="model">edi.communication</field>
+			<field name="type">tree</field>
+			<field name="priority">20</field>
+			<field name="arch" type="xml">
+				<tree string="EDI Communications" editable="bottom">
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- ______________________________________________________________________ -->
+		<!-- FormView for edi_communication											-->
+
+		<record id="edi_communication_form" model="ir.ui.view">
+			<field name="name">e-integration: EDI communication form</field>
+			<field name="model">edi.communication</field>
+			<field name="type">form</field>
+			<field name="priority">20</field>
+			<field name="arch" type="xml">
+				<form string="EDI Communication" editable="bottom">
+					<sheet>
+						<group>
+							<field name="name" />
+							<field name="description" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		
+		<record model="ir.actions.act_window" id="action_list_edi_communication">
+			<field name="name">EDI Communication Types Overview</field>
+			<field name="res_model">edi.communication</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+		<menuitem id="menu_edi_communication" parent="menu_edi_messages_management"
+			name="EDI Communication Types" sequence="5" action="action_list_edi_communication" />	
+
+</data>
+</openerp>

@@ -1,0 +1,19 @@
+<openerp>
+	<data>
+
+		<!-- ______________________________________________________________________ -->
+		<!-- EDI document email template    					                    -->
+		<record id="edi_document_email_template" model="email.template">
+			<field name="name">EDI Document Template</field>
+			<field name="model_id" ref="eintegration_edi_manager.model_edi_document" />
+			<field name="auto_delete" eval="False" />
+			<field name="email_from">${object.sender.partner_id.email}</field>
+			<field name="lang">${object.recipient.partner_id.lang}</field>
+			<field name="email_to">${object.env['ir.config_parameter'].sudo().get_param('eintegration.edi_recipient_email_address')}</field>
+			<field name="subject">EDI Document
+			</field>
+			<field name="body_html"><![CDATA[The EDI document  is in the attachment.]]></field>
+		</record>
+
+	</data>
+</openerp>

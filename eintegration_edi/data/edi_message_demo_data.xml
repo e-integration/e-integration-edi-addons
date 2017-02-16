@@ -1,0 +1,102 @@
+<openerp>
+	<data>
+		<record model="edi.message.format" id="edi_message_format_1">
+			<field name="name">format1</field>
+		</record>
+		<record model="edi.message.format" id="edi_message_format_2">
+			<field name="name">format2</field>
+		</record>
+		<record model="edi.message.format" id="edi_message_format_3">
+			<field name="name">format3</field>
+		</record>
+
+		<record model="edi.message.organisation" id="edi_message_organisation_1">
+			<field name="name">org1</field>
+		</record>
+		<record model="edi.message.organisation" id="edi_message_organisation_2">
+			<field name="name">org2</field>
+		</record>
+		<record model="edi.message.organisation" id="edi_message_organisation_3">
+			<field name="name">org3</field>
+		</record>
+
+		<record model="edi.message.type" id="edi_message_type_1">
+			<field name="name">type1</field>
+		</record>
+		<record model="edi.message.type" id="edi_message_type_2">
+			<field name="name">type2</field>
+		</record>
+		<record model="edi.message.type" id="edi_message_type_3">
+			<field name="name">type3</field>
+		</record>
+
+		<record model="edi.message.variant" id="edi_message_variant_1">
+			<field name="name">variant1</field>
+		</record>
+		<record model="edi.message.variant" id="edi_message_variant_2">
+			<field name="name">variant2</field>
+		</record>
+		<record model="edi.message.variant" id="edi_message_variant_3">
+			<field name="name">variant3</field>
+		</record>
+
+		<record model="edi.message.version" id="edi_message_version_1">
+			<field name="name">version1</field>
+		</record>
+		<record model="edi.message.version" id="edi_message_version_2">
+			<field name="name">version2</field>
+		</record>
+		<record model="edi.message.version" id="edi_message_version_3">
+			<field name="name">version3</field>
+		</record>
+
+		<record model="edi.message" id="edi_message_1">
+			<field name="direction">ecc-in</field>
+			<field name="type_id">1</field>
+			<field name="version_id">1</field>
+			<field name="organisation_id">1</field>
+			<field name="variant_id">1</field>
+			<field name="format_id">1</field>
+		</record>
+		<record model="edi.message" id="edi_message_2">
+			<field name="direction">ecc-out</field>
+			<field name="type_id">1</field>
+			<field name="version_id">1</field>
+			<field name="organisation_id">1</field>
+			<field name="variant_id">1</field>
+			<field name="format_id">1</field>
+		</record>
+		<record model="edi.message" id="edi_message_3">
+			<field name="direction">ecc-in</field>
+			<field name="type_id">2</field>
+			<field name="version_id">2</field>
+			<field name="organisation_id">2</field>
+			<field name="variant_id">2</field>
+			<field name="format_id">2</field>
+		</record>
+		<record model="edi.message" id="edi_message_4">
+			<field name="direction">ecc-out</field>
+			<field name="type_id">2</field>
+			<field name="version_id">2</field>
+			<field name="organisation_id">2</field>
+			<field name="variant_id">2</field>
+			<field name="format_id">2</field>
+		</record>
+		<record model="edi.message" id="edi_message_5">
+			<field name="direction">ecc-in</field>
+			<field name="type_id">3</field>
+			<field name="version_id">3</field>
+			<field name="organisation_id">3</field>
+			<field name="variant_id">3</field>
+			<field name="format_id">3</field>
+		</record>
+		<record model="edi.message" id="edi_message_6">
+			<field name="direction">ecc-out</field>
+			<field name="type_id">3</field>
+			<field name="version_id">3</field>
+			<field name="organisation_id">3</field>
+			<field name="variant_id">3</field>
+			<field name="format_id">3</field>
+		</record>
+	</data>
+</openerp>

@@ -1,0 +1,15 @@
+<openerp>
+
+	<data noupdate="1">
+		<record id="edi_document_stage_tt_draft" model="edi.document.stage">
+			<field name="name">Draft</field>
+		</record>
+		<record id="edi_document_stage_tt_to_be_sent" model="edi.document.stage">
+			<field name="name">To Be Sent</field>
+		</record>
+		<record id="edi_document_stage_tt_sent" model="edi.document.stage">
+			<field name="name">Sent</field>
+		</record>
+	</data>
+
+</openerp>

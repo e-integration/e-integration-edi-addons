@@ -1,0 +1,60 @@
+<openerp>
+	<data>
+
+	<!-- ______________________________________________________________________ -->
+			<!-- FormView for edi_document											-->
+
+			<record id="edi_document_stage_form" model="ir.ui.view">
+				<field name="name">e-integration: EDI document stage form</field>
+				<field name="model">edi.document.stage</field>
+				<field name="type">form</field>
+				<field name="priority">20</field>
+				<field name="arch" type="xml">
+					<form string="EDI Document Stage">
+						<sheet>
+							<group>
+								<group>
+									<field name="name" />
+									<field name="sequence" />
+								</group>
+								<group>
+									<field name="is_default" />								
+								</group>
+							</group>
+							<field name="description" />
+						</sheet>
+					</form>
+				</field>
+			</record>
+
+	<!-- ______________________________________________________________________ -->
+	<!-- TreeView for edi_document_stage										-->
+
+	<record id="edi_document_stage_tree" model="ir.ui.view">
+		<field name="name">e-integration: EDI document stage tree</field>
+		<field name="model">edi.document.stage</field>
+		<field name="type">tree</field>
+		<field name="priority">20</field>
+		<field name="arch" type="xml">
+			<tree string="EDI Stages">
+				<field name="name" />
+				<field name="description" />
+				<field name="is_default" />
+			</tree>
+		</field>
+	</record>
+
+	<record model="ir.actions.act_window" id="action_list_edi_document_stages">
+		<field name="name">EDI Document Stages</field>
+		<field name="res_model">edi.document.stage</field>
+		<field name="view_mode">tree,form</field>
+	</record>	
+
+	<menuitem name="Configuration" id="menu_edi_management_configuration"
+			parent="eintegration_edi.root_menu_edi" sequence="10" />
+
+	<menuitem id="menu_edi_document_stages" parent="menu_edi_management_configuration"
+		name="EDI Document Stages" sequence="5" action="action_list_edi_document_stages" />
+
+	</data>
+</openerp>

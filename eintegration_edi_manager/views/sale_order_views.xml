@@ -1,0 +1,33 @@
+<openerp>
+	<data>
+
+		<!-- ______________________________________________________________________ -->
+		<!-- Sale order with edi_document -->
+
+		<record id="eint_sale_order_with_edi_document" model="ir.ui.view">
+			<field name="name">Inherit sale_order form: e-integration</field>
+			<field name="model">sale.order</field>
+			<field name="inherit_id" ref="sale.view_order_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='state']" position="before">
+					<button name="create_edi_document" type="object" string="Send by EDI"
+						groups="base.group_user"
+						attrs="{'invisible':['&amp;','|',('state', '!=', 'draft'),('state', '!=', 'sent'),('edi_recipient_id', '=', False)]}" />
+				</xpath>
+				<xpath expr="//field[@name='partner_id']" position="after">
+					<field name="customer_company_id" invisible="1" />
+					<field name="edi_recipient_id"
+						attrs="{'readonly':[('state', 'not in', ['draft','open'])]}"
+						domain="[('partner_id.parent_id','=', customer_company_id)]" />
+				</xpath>
+				<xpath expr="//notebook" position="inside">
+					<page string="EDI Documents" groups="base.group_user"
+						attrs="{'invisible':[('edi_recipient_id', '=', False)]}">
+						<field name="edi_document_ids" />
+					</page>
+				</xpath>
+			</field>
+		</record>
+
+	</data>
+</openerp>
