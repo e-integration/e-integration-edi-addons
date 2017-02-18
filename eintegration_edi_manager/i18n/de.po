@@ -1,0 +1,589 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* eintegration_edi_manager
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-01-25 15:43+0000\n"
+"PO-Revision-Date: 2017-01-25 15:43+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: eintegration_edi_manager
+#: view:website:eintegration_edi_manager.edi_document_report_template
+msgid "<?xml version='1.0'?>\n"
+"<M_e-RDS_"
+msgstr "<?xml version='1.0'?>\n"
+"<M_e-RDS_"
+
+#. module: eintegration_edi_manager
+#: view:website:eintegration_edi_manager.edi_document_report_template
+msgid ">\n"
+"	<R_STEU>\n"
+"		<F_RECID_STEU><![CDATA[STEU]]></F_RECID_STEU>\n"
+"		<F_STEU_NACHRICHTENTYP><![CDATA["
+msgstr ">\n"
+"	<R_STEU>\n"
+"		<F_RECID_STEU><![CDATA[STEU]]></F_RECID_STEU>\n"
+"		<F_STEU_NACHRICHTENTYP><![CDATA["
+
+#. module: eintegration_edi_manager
+#. openerp-web
+#: code:addons/eintegration_edi_manager/static/src/xml/templates.xml:26
+#, python-format
+msgid "Add"
+msgstr "Add"
+
+#. module: eintegration_edi_manager
+#. openerp-web
+#: code:addons/eintegration_edi_manager/static/src/xml/templates.xml:12
+#, python-format
+msgid "Available Relationships"
+msgstr "Available Relationships"
+
+#. module: eintegration_edi_manager
+#: view:edi.document:eintegration_edi_manager.edi_document_form
+#: field:edi.document,body:0
+msgid "Body"
+msgstr "Body"
+
+#. module: eintegration_edi_manager
+#: view:edi.document.invoice.create:eintegration_edi_manager.edi_document_create_wizard_view
+msgid "Cancel"
+msgstr "Cancel"
+
+#. module: eintegration_edi_manager
+#. openerp-web
+#: code:addons/eintegration_edi_manager/static/src/xml/templates.xml:38
+#, python-format
+msgid "Close"
+msgstr "Close"
+
+#. module: eintegration_edi_manager
+#: model:ir.ui.menu,name:eintegration_edi_manager.menu_edi_management_configuration
+msgid "Configuration"
+msgstr "Konfiguration"
+
+#. module: eintegration_edi_manager
+#. openerp-web
+#: code:addons/eintegration_edi_manager/static/src/xml/templates.xml:37
+#, python-format
+msgid "Confirm"
+msgstr "Confirm"
+
+#. module: eintegration_edi_manager
+#: model:ir.model,name:eintegration_edi_manager.model_edi_document_invoice_create
+msgid "Create edi documents from the selected invoices"
+msgstr "Create edi documents from the selected invoices"
+
+#. module: eintegration_edi_manager
+#: field:edi.document,create_uid:0
+#: field:edi.document.invoice.create,create_uid:0
+#: field:edi.document.partner,create_uid:0
+#: field:edi.document.stage,create_uid:0
+#: field:edi.document.temporary,create_uid:0
+#: field:edi.template,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: eintegration_edi_manager
+#: field:edi.document,create_date:0
+#: field:edi.document.invoice.create,create_date:0
+#: field:edi.document.partner,create_date:0
+#: field:edi.document.stage,create_date:0
+#: field:edi.document.temporary,create_date:0
+#: field:edi.template,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: eintegration_edi_manager
+#: field:account.invoice,customer_company_id:0
+msgid "Customer company id"
+msgstr "Customer company id"
+
+#. module: eintegration_edi_manager
+#: help:edi.document,message_last_post:0
+#: help:edi.document.partner,message_last_post:0
+#: help:edi.template,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr "Date of the last message posted on the record."
+
+#. module: eintegration_edi_manager
+#: field:edi.document.stage,is_default:0
+msgid "Default for New EDI Documents"
+msgstr "Default for New EDI Documents"
+
+#. module: eintegration_edi_manager
+#: field:edi.document.stage,description:0
+msgid "Description"
+msgstr "Description"
+
+#. module: eintegration_edi_manager
+#: field:edi.document,display_name:0
+#: field:edi.document.invoice.create,display_name:0
+#: field:edi.document.partner,display_name:0
+#: field:edi.document.stage,display_name:0
+#: field:edi.document.temporary,display_name:0
+#: field:edi.template,display_name:0
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: eintegration_edi_manager
+#: view:edi.document:eintegration_edi_manager.edi_document_form
+msgid "EDI Document"
+msgstr "EDI Document"
+
+#. module: eintegration_edi_manager
+#: model:email.template,subject:eintegration_edi_manager.edi_document_email_template
+msgid "EDI Document\n"
+"			"
+msgstr "EDI Document\n"
+"			"
+
+#. module: eintegration_edi_manager
+#: view:edi.document.partner:eintegration_edi_manager.edi_document_partner_form
+msgid "EDI Document Partner"
+msgstr "EDI Document Partner"
+
+#. module: eintegration_edi_manager
+#: view:edi.document.partner:eintegration_edi_manager.edi_document_partner_tree
+#: model:ir.ui.menu,name:eintegration_edi_manager.menu_edi_document_partners
+#: view:res.partner:eintegration_edi_manager.eint_res_partner_with_edi_documents_page
+msgid "EDI Document Partners"
+msgstr "EDI Document Partners"
+
+#. module: eintegration_edi_manager
+#: model:ir.actions.act_window,name:eintegration_edi_manager.action_list_edi_document_partner
+msgid "EDI Document Partners Overview"
+msgstr "EDI Document Partners Overview"
+
+#. module: eintegration_edi_manager
+#: model:ir.actions.report.xml,name:eintegration_edi_manager.edi_document_report
+msgid "EDI Document Report"
+msgstr "EDI Document Report"
+
+#. module: eintegration_edi_manager
+#: view:edi.document.stage:eintegration_edi_manager.edi_document_stage_form
+#: model:ir.model,name:eintegration_edi_manager.model_edi_document_stage
+msgid "EDI Document Stage"
+msgstr "EDI Document Stage"
+
+#. module: eintegration_edi_manager
+#: model:ir.actions.act_window,name:eintegration_edi_manager.action_list_edi_document_stages
+#: model:ir.ui.menu,name:eintegration_edi_manager.menu_edi_document_stages
+msgid "EDI Document Stages"
+msgstr "EDI Document Stages"
+
+#. module: eintegration_edi_manager
+#: code:addons/eintegration_edi_manager/edi_document.py:288
+#: code:addons/eintegration_edi_manager/edi_document_create_wizard.py:60
+#, python-format
+msgid "EDI Document created"
+msgstr "EDI Document created"
+
+#. module: eintegration_edi_manager
+#: view:account.invoice:eintegration_edi_manager.eint_account_invoice_with_edi_document
+#: view:edi.document:eintegration_edi_manager.edi_document_tree
+#: help:edi.document.stage,edi_document_ids:0
+#: model:ir.ui.menu,name:eintegration_edi_manager.menu_edi_documents
+msgid "EDI Documents"
+msgstr "EDI Documents"
+
+#. module: eintegration_edi_manager
+#: model:ir.actions.act_window,name:eintegration_edi_manager.action_list_edi_document
+msgid "EDI Documents Overview"
+msgstr "EDI Documents Overview"
+
+#. module: eintegration_edi_manager
+#: field:account.invoice,edi_recipient_id:0
+msgid "EDI Recipient"
+msgstr "EDI Recipient"
+
+#. module: eintegration_edi_manager
+#: view:edi.document.stage:eintegration_edi_manager.edi_document_stage_tree
+msgid "EDI Stages"
+msgstr "EDI Stages"
+
+#. module: eintegration_edi_manager
+#: view:edi.template:eintegration_edi_manager.edi_template_form
+#: view:edi.template:eintegration_edi_manager.edi_template_tree
+#: model:ir.actions.act_window,name:eintegration_edi_manager.action_list_edi_template
+msgid "EDI Template"
+msgstr "EDI Template"
+
+#. module: eintegration_edi_manager
+#: model:ir.ui.menu,name:eintegration_edi_manager.menu_edi_template
+msgid "EDI Templates"
+msgstr "EDI Templates"
+
+#. module: eintegration_edi_manager
+#: model:ir.model,name:eintegration_edi_manager.model_edi_document_partner
+msgid "EDI partner with a GLN connected to a res.patner"
+msgstr "EDI partner with a GLN connected to a res.patner"
+
+#. module: eintegration_edi_manager
+#: field:account.invoice,edi_document_ids:0
+#: field:edi.document.stage,edi_document_ids:0
+msgid "Edi document ids"
+msgstr "Edi document ids"
+
+#. module: eintegration_edi_manager
+#: field:res.partner,edi_document_partner_ids:0
+msgid "Edi document partner ids"
+msgstr "Edi document partner ids"
+
+#. module: eintegration_edi_manager
+#: field:edi.document.invoice.create,edi_document_temporary_ids:0
+msgid "Edi document temporary ids"
+msgstr "Edi document temporary ids"
+
+#. module: eintegration_edi_manager
+#: field:edi.template,edi_field_selection:0
+msgid "Edi field selection"
+msgstr "Edi field selection"
+
+#. module: eintegration_edi_manager
+#: model:ir.model,name:eintegration_edi_manager.model_edi_template
+msgid "Email Thread"
+msgstr "E-Mail Thread"
+
+#. module: eintegration_edi_manager
+#: field:edi.template,export_fields:0
+msgid "Exported Fields"
+msgstr "Exported Fields"
+
+#. module: eintegration_edi_manager
+#: view:edi.template:eintegration_edi_manager.edi_template_form
+msgid "Exported Relationships"
+msgstr "Exported Relationships"
+
+#. module: eintegration_edi_manager
+#: view:edi.document:eintegration_edi_manager.edi_document_form
+#: view:edi.document.partner:eintegration_edi_manager.edi_document_partner_form
+#: view:edi.template:eintegration_edi_manager.edi_template_form
+msgid "Follow this project to automatically track the events associated to tasks and issues of this project."
+msgstr "Follow this project to automatically track the events associated to tasks and issues of this project."
+
+#. module: eintegration_edi_manager
+#: field:edi.document,message_follower_ids:0
+#: field:edi.document.partner,message_follower_ids:0
+#: field:edi.template,message_follower_ids:0
+msgid "Followers"
+msgstr "Followers"
+
+#. module: eintegration_edi_manager
+#: model:ir.model,name:eintegration_edi_manager.model_edi_document
+msgid "General EDI document"
+msgstr "General EDI document"
+
+#. module: eintegration_edi_manager
+#: field:edi.document.partner,gln:0
+msgid "Gln"
+msgstr "Gln"
+
+#. module: eintegration_edi_manager
+#: help:edi.document,message_summary:0
+#: help:edi.document.partner,message_summary:0
+#: help:edi.template,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+
+#. module: eintegration_edi_manager
+#: field:edi.document,id:0
+#: field:edi.document.invoice.create,id:0
+#: field:edi.document.partner,id:0
+#: field:edi.document.stage,id:0
+#: field:edi.document.temporary,id:0
+#: field:edi.template,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: eintegration_edi_manager
+#: help:edi.document,message_unread:0
+#: help:edi.document.partner,message_unread:0
+#: help:edi.template,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr "If checked new messages require your attention."
+
+#. module: eintegration_edi_manager
+#: model:ir.model,name:eintegration_edi_manager.model_account_invoice
+msgid "Invoice"
+msgstr "Rechnung"
+
+#. module: eintegration_edi_manager
+#: field:edi.document.temporary,invoice_id:0
+msgid "Invoice id"
+msgstr "Invoice id"
+
+#. module: eintegration_edi_manager
+#: field:edi.document,message_is_follower:0
+#: field:edi.document.partner,message_is_follower:0
+#: field:edi.template,message_is_follower:0
+msgid "Is a Follower"
+msgstr "Is a Follower"
+
+#. module: eintegration_edi_manager
+#: field:edi.document,message_last_post:0
+#: field:edi.document.partner,message_last_post:0
+#: field:edi.template,message_last_post:0
+msgid "Last Message Date"
+msgstr "Last Message Date"
+
+#. module: eintegration_edi_manager
+#: field:edi.document,__last_update:0
+#: field:edi.document.invoice.create,__last_update:0
+#: field:edi.document.partner,__last_update:0
+#: field:edi.document.stage,__last_update:0
+#: field:edi.document.temporary,__last_update:0
+#: field:edi.template,__last_update:0
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: eintegration_edi_manager
+#: field:edi.document,write_uid:0
+#: field:edi.document.invoice.create,write_uid:0
+#: field:edi.document.partner,write_uid:0
+#: field:edi.document.stage,write_uid:0
+#: field:edi.document.temporary,write_uid:0
+#: field:edi.template,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: eintegration_edi_manager
+#: field:edi.document,write_date:0
+#: field:edi.document.invoice.create,write_date:0
+#: field:edi.document.partner,write_date:0
+#: field:edi.document.stage,write_date:0
+#: field:edi.document.temporary,write_date:0
+#: field:edi.template,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: eintegration_edi_manager
+#: field:edi.document,message_type:0
+#: field:edi.template,message_type:0
+msgid "Message type"
+msgstr "Message type"
+
+#. module: eintegration_edi_manager
+#: field:edi.document,message_ids:0
+#: field:edi.document.partner,message_ids:0
+#: field:edi.template,message_ids:0
+msgid "Messages"
+msgstr "Messages"
+
+#. module: eintegration_edi_manager
+#: help:edi.document,message_ids:0
+#: help:edi.document.partner,message_ids:0
+#: help:edi.template,message_ids:0
+msgid "Messages and communication history"
+msgstr "Messages and communication history"
+
+#. module: eintegration_edi_manager
+#: field:edi.template,model:0
+msgid "Model"
+msgstr "Model"
+
+#. module: eintegration_edi_manager
+#: field:edi.template,model_name:0
+msgid "Model name"
+msgstr "Model name"
+
+#. module: eintegration_edi_manager
+#: field:edi.document,name:0
+#: field:edi.document.partner,name:0
+#: field:edi.template,name:0
+msgid "Name"
+msgstr "Name"
+
+#. module: eintegration_edi_manager
+#: code:addons/eintegration_edi_manager/edi_document.py:278
+#, python-format
+msgid "No GLN found for invoice issuer: %s"
+msgstr "No GLN found for invoice issuer: %s"
+
+#. module: eintegration_edi_manager
+#: view:edi.document.invoice.create:eintegration_edi_manager.edi_document_create_wizard_view
+msgid "Only invoices to companies with a GLN will be processed."
+msgstr "Only invoices to companies with a GLN will be processed."
+
+#. module: eintegration_edi_manager
+#: model:ir.model,name:eintegration_edi_manager.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: eintegration_edi_manager
+#: field:edi.document.partner,partner_id:0
+msgid "Partner id"
+msgstr "Partner id"
+
+#. module: eintegration_edi_manager
+#: field:edi.document,recipient:0
+msgid "Recipient"
+msgstr "Recipient"
+
+#. module: eintegration_edi_manager
+#: field:edi.document.temporary,recipient_ids:0
+msgid "Recipient ids"
+msgstr "Recipient ids"
+
+#. module: eintegration_edi_manager
+#: field:edi.document,res_id:0
+msgid "Related Document ID"
+msgstr "Related Document ID"
+
+#. module: eintegration_edi_manager
+#: field:edi.document,model:0
+msgid "Related Document Model"
+msgstr "Related Document Model"
+
+#. module: eintegration_edi_manager
+#. openerp-web
+#: code:addons/eintegration_edi_manager/static/src/xml/templates.xml:27
+#, python-format
+msgid "Remove"
+msgstr "Remove"
+
+#. module: eintegration_edi_manager
+#. openerp-web
+#: code:addons/eintegration_edi_manager/static/src/xml/templates.xml:28
+#, python-format
+msgid "Remove All"
+msgstr "Remove All"
+
+#. module: eintegration_edi_manager
+#. openerp-web
+#: code:addons/eintegration_edi_manager/static/src/xml/templates.xml:5
+#, python-format
+msgid "Select Related Entities"
+msgstr "Select Related Entities"
+
+#. module: eintegration_edi_manager
+#. openerp-web
+#: code:addons/eintegration_edi_manager/static/src/xml/templates.xml:14
+#, python-format
+msgid "Selected Relationships"
+msgstr "Selected Relationships"
+
+#. module: eintegration_edi_manager
+#: model:ir.actions.server,name:eintegration_edi_manager.action_send_edi_documents
+msgid "Send EDI Documents"
+msgstr "Send EDI Documents"
+
+#. module: eintegration_edi_manager
+#: view:edi.document:eintegration_edi_manager.edi_document_form
+msgid "Send Now"
+msgstr "Send Now"
+
+#. module: eintegration_edi_manager
+#: view:account.invoice:eintegration_edi_manager.eint_account_invoice_with_edi_document
+#: view:edi.document.invoice.create:eintegration_edi_manager.edi_document_create_wizard_view
+#: model:ir.actions.act_window,name:eintegration_edi_manager.action_create_edi_document_from_invoice
+msgid "Send by EDI"
+msgstr "Send by EDI"
+
+#. module: eintegration_edi_manager
+#: field:edi.document,sender:0
+msgid "Sender"
+msgstr "Sender"
+
+#. module: eintegration_edi_manager
+#: field:edi.document.stage,sequence:0
+msgid "Sequence"
+msgstr "Sequence"
+
+#. module: eintegration_edi_manager
+#: field:edi.document.stage,name:0
+msgid "Stage Name"
+msgstr "Stage Name"
+
+#. module: eintegration_edi_manager
+#: field:edi.document,stage_id:0
+msgid "Stage id"
+msgstr "Stage id"
+
+#. module: eintegration_edi_manager
+#: field:edi.document,message_summary:0
+#: field:edi.document.partner,message_summary:0
+#: field:edi.template,message_summary:0
+msgid "Summary"
+msgstr "Summary"
+
+#. module: eintegration_edi_manager
+#: view:edi.template:eintegration_edi_manager.edi_template_form
+msgid "Template Name"
+msgstr "Template Name"
+
+#. module: eintegration_edi_manager
+#: model:email.template,body_html:eintegration_edi_manager.edi_document_email_template
+msgid "The EDI document  is in the attachment."
+msgstr "The EDI document  is in the attachment."
+
+#. module: eintegration_edi_manager
+#: field:edi.document,message_unread:0
+#: field:edi.document.partner,message_unread:0
+#: field:edi.template,message_unread:0
+msgid "Unread Messages"
+msgstr "Unread Messages"
+
+#. module: eintegration_edi_manager
+#: field:edi.document,website_message_ids:0
+#: field:edi.document.partner,website_message_ids:0
+#: field:edi.template,website_message_ids:0
+msgid "Website Messages"
+msgstr "Website Messages"
+
+#. module: eintegration_edi_manager
+#: help:edi.document,website_message_ids:0
+#: help:edi.document.partner,website_message_ids:0
+#: help:edi.template,website_message_ids:0
+msgid "Website communication history"
+msgstr "Website communication history"
+
+#. module: eintegration_edi_manager
+#: view:website:eintegration_edi_manager.edi_document_report_template
+msgid "]]></F_STEU_ABSENDERKENNUNG>\n"
+"		<F_STEU_EMPFAENGERKENNUNG><![CDATA["
+msgstr "]]></F_STEU_ABSENDERKENNUNG>\n"
+"		<F_STEU_EMPFAENGERKENNUNG><![CDATA["
+
+#. module: eintegration_edi_manager
+#: view:website:eintegration_edi_manager.edi_document_report_template
+msgid "]]></F_STEU_EMPFAENGERKENNUNG>\n"
+"		<F_STEU_ERSTELLUNGSDATUM><![CDATA["
+msgstr "]]></F_STEU_EMPFAENGERKENNUNG>\n"
+"		<F_STEU_ERSTELLUNGSDATUM><![CDATA["
+
+#. module: eintegration_edi_manager
+#: view:website:eintegration_edi_manager.edi_document_report_template
+msgid "]]></F_STEU_ERSTELLUNGSDATUM>\n"
+"	</R_STEU>\n"
+"    <G_NACHRICHT>\n"
+"		<MESSAGEBODY/>\n"
+"	</G_NACHRICHT>\n"
+"</M_e-RDS_"
+msgstr "]]></F_STEU_ERSTELLUNGSDATUM>\n"
+"	</R_STEU>\n"
+"    <G_NACHRICHT>\n"
+"		<MESSAGEBODY/>\n"
+"	</G_NACHRICHT>\n"
+"</M_e-RDS_"
+
+#. module: eintegration_edi_manager
+#: view:website:eintegration_edi_manager.edi_document_report_template
+msgid "]]></F_STEU_NACHRICHTENTYP>\n"
+"		<F_STEU_ABSENDERKENNUNG><![CDATA["
+msgstr "]]></F_STEU_NACHRICHTENTYP>\n"
+"		<F_STEU_ABSENDERKENNUNG><![CDATA["
+
+#. module: eintegration_edi_manager
+#: view:edi.document.invoice.create:eintegration_edi_manager.edi_document_create_wizard_view
+msgid "or"
+msgstr "or"
+

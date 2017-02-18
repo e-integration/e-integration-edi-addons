@@ -1,0 +1,165 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* eintegration_edi
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-09 09:53+0000\n"
+"PO-Revision-Date: 2016-11-09 09:53+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: eintegration_edi
+#: field:edi.communication,create_uid:0
+#: field:edi.message,create_uid:0
+#: field:edi.message.format,create_uid:0
+#: field:edi.message.organisation,create_uid:0
+#: field:edi.message.type,create_uid:0
+#: field:edi.message.variant,create_uid:0
+#: field:edi.message.version,create_uid:0
+msgid "Created by"
+msgstr "Angelegt von"
+
+#. module: eintegration_edi
+#: field:edi.communication,create_date:0
+#: field:edi.message,create_date:0
+#: field:edi.message.format,create_date:0
+#: field:edi.message.organisation,create_date:0
+#: field:edi.message.type,create_date:0
+#: field:edi.message.variant,create_date:0
+#: field:edi.message.version,create_date:0
+msgid "Created on"
+msgstr "Angelegt am"
+
+#. module: eintegration_edi
+#: field:edi.communication,description:0
+msgid "Description"
+msgstr "Beschreibung"
+
+#. module: eintegration_edi
+#: field:edi.message,direction:0
+msgid "Direction"
+msgstr "Richtung"
+
+#. module: eintegration_edi
+#: model:ir.ui.menu,name:eintegration_edi.menu_edi_messages_management
+#: model:ir.ui.menu,name:eintegration_edi.root_menu_edi
+msgid "EDI"
+msgstr "EDI"
+
+#. module: eintegration_edi
+#: view:edi.communication:eintegration_edi.edi_communication_form
+msgid "EDI Communication"
+msgstr "EDI-Kommunikation"
+
+#. module: eintegration_edi
+#: model:ir.ui.menu,name:eintegration_edi.menu_edi_communication
+msgid "EDI Communication Types"
+msgstr "EDI-Kommunikationstypen"
+
+#. module: eintegration_edi
+#: model:ir.actions.act_window,name:eintegration_edi.action_list_edi_communication
+msgid "EDI Communication Types Overview"
+msgstr "EDI-Kommunikationstypen"
+
+#. module: eintegration_edi
+#: view:edi.communication:eintegration_edi.edi_communication_tree
+msgid "EDI Communications"
+msgstr "EDI-Kommunikation"
+
+#. module: eintegration_edi
+#: view:edi.message:eintegration_edi.edi_message_form
+#: view:edi.message:eintegration_edi.edi_message_tree
+#: model:ir.ui.menu,name:eintegration_edi.menu_edi_messages
+msgid "EDI Messages"
+msgstr "EDI Nachrichtenarten"
+
+#. module: eintegration_edi
+#: model:ir.actions.act_window,name:eintegration_edi.action_list_edi_messages
+msgid "EDI Messages Overview"
+msgstr "EDI Nachrichtenarten"
+
+#. module: eintegration_edi
+#: field:edi.message,format_id:0
+msgid "Format"
+msgstr "Format"
+
+#. module: eintegration_edi
+#: field:edi.communication,id:0
+#: field:edi.message,id:0
+#: field:edi.message.format,id:0
+#: field:edi.message.organisation,id:0
+#: field:edi.message.type,id:0
+#: field:edi.message.variant,id:0
+#: field:edi.message.version,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: eintegration_edi
+#: field:edi.communication,write_uid:0
+#: field:edi.message,write_uid:0
+#: field:edi.message.format,write_uid:0
+#: field:edi.message.organisation,write_uid:0
+#: field:edi.message.type,write_uid:0
+#: field:edi.message.variant,write_uid:0
+#: field:edi.message.version,write_uid:0
+msgid "Last Updated by"
+msgstr "Zuletzt bearbeitet von"
+
+#. module: eintegration_edi
+#: field:edi.communication,write_date:0
+#: field:edi.message,write_date:0
+#: field:edi.message.format,write_date:0
+#: field:edi.message.organisation,write_date:0
+#: field:edi.message.type,write_date:0
+#: field:edi.message.variant,write_date:0
+#: field:edi.message.version,write_date:0
+msgid "Last Updated on"
+msgstr "Zuletzt bearbeitet am"
+
+#. module: eintegration_edi
+#: field:edi.communication,name:0
+#: field:edi.message.format,name:0
+#: field:edi.message.organisation,name:0
+#: field:edi.message.type,name:0
+#: field:edi.message.variant,name:0
+#: field:edi.message.version,name:0
+msgid "Name"
+msgstr "Name"
+
+#. module: eintegration_edi
+#: field:edi.message,organisation_id:0
+msgid "Organisation"
+msgstr "Organisation"
+
+#. module: eintegration_edi
+#: field:edi.message,type_id:0
+msgid "Type"
+msgstr "Typ"
+
+#. module: eintegration_edi
+#: field:edi.message,variant_id:0
+msgid "Variant"
+msgstr "Variante"
+
+#. module: eintegration_edi
+#: field:edi.message,version_id:0
+msgid "Version"
+msgstr "Version"
+
+#. module: eintegration_edi
+#: selection:edi.message,direction:0
+msgid "eCC-IN"
+msgstr "eCC-IN"
+
+#. module: eintegration_edi
+#: selection:edi.message,direction:0
+msgid "eCC-Out"
+msgstr "eCC-Out"
+

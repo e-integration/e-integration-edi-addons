@@ -1,0 +1,75 @@
+<openerp>
+	<data>
+
+		<!-- ______________________________________________________________________ -->
+		<!-- TreeView for edi_template -->
+
+		<record id="edi_template_tree" model="ir.ui.view">
+			<field name="name">e-integration: EDI template tree</field>
+			<field name="model">edi.template</field>
+			<field name="type">tree</field>
+			<field name="priority">20</field>
+			<field name="arch" type="xml">
+				<tree string="EDI Template">
+					<field name="name" />
+					<field name="message_type" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- ______________________________________________________________________ -->
+		<!-- FormView for edi_template -->
+
+		<record id="edi_template_form" model="ir.ui.view">
+			<field name="name">e-integration: EDI template form</field>
+			<field name="model">edi.template</field>
+			<field name="type">form</field>
+			<field name="priority">20</field>
+			<field name="arch" type="xml">
+				<form string="EDI Template">
+					<header>
+						<field name="name" readonly="1" />
+					</header>
+					<sheet>
+						<div class="oe_title">
+							<label for="name" class="oe_edit_only" string="Template Name"/>
+							<h1>
+								<field name="name" />
+							</h1>
+						</div>
+						<group>
+							<field name="message_type" />
+							<field name="model" />
+						</group>
+						<field name="model_name" invisible="1"/>
+						<field name="id" widget="FieldSelection" nolabel="1" readonly="1"/>
+						<group>
+							<field name="export_field_ids" string="Exported Relationships" readonly="1" >
+								<tree>
+									<field name="display_name" string="Name"/>
+									<field name="name" string="Technical Name"/>
+								</tree>
+							</field>
+						</group>
+					</sheet>
+					<div class="oe_chatter">
+						<field name="message_follower_ids" widget="mail_followers"
+							help="Follow this project to automatically track the events associated to tasks and issues of this project."
+							groups="base.group_user" />
+						<field name="message_ids" widget="mail_thread" />
+					</div>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_list_edi_template">
+			<field name="name">EDI Template</field>
+			<field name="res_model">edi.template</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem id="menu_edi_template" parent="menu_edi_management_configuration"
+			name="EDI Templates" sequence="5" action="action_list_edi_template" />
+
+	</data>
+</openerp>

@@ -1,0 +1,10 @@
+<openerp>
+	<data noupdate="1">
+
+		<record id="eintegration.edi_recipient_email_address" model="ir.config_parameter">
+			<field name="key">eintegration.edi_recipient_email_address</field>
+			<field name="value">e-RDS@edi.edicc.de</field>
+		</record>
+
+	</data>
+</openerp>

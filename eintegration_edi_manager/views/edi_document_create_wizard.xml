@@ -1,0 +1,53 @@
+<openerp>
+	<data>
+
+		<record id="edi_document_temporary_tree_view" model="ir.ui.view">
+            <field name="name">edi.document.temporary.tree</field>
+            <field name="model">edi.document.temporary</field>
+            <field name="arch" type="xml">
+                <tree>
+					<field name="recipient_ids" />
+					<field name="invoice_id" />
+					<field name="id" />
+                </tree>
+            </field>
+        </record>
+
+		<record id="edi_document_create_wizard_view" model="ir.ui.view">
+            <field name="name">edi.document.create.wizard.form</field>
+            <field name="model">edi.document.invoice.create</field>
+            <field name="arch" type="xml">
+                <form string="Send by EDI">
+                    <p class="oe_grey">
+                        Only invoices to companies with a GLN will be processed.
+                    </p>
+                    <group>
+					<field name="edi_document_temporary_ids" />
+					<!-- <group>
+						<field name="recipient_ids" />
+					</group>
+					<group>
+						<field name="invoice_ids">
+							<tree>
+								<field name="name" />
+								<field name="state" />
+							</tree>
+						</field>
+					</group> -->
+                    </group>
+                    <footer>
+                        <button string="Send by EDI" name="create_edi_document" type="object" default_focus="1" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+		<act_window id="action_create_edi_document_from_invoice"
+				multi="True" groups="base.group_user" key2="client_action_multi"
+				name="Send by EDI" res_model="edi.document.invoice.create" src_model="account.invoice"
+				view_mode="form" target="new" view_type="form" />
+
+	</data>
+</openerp>

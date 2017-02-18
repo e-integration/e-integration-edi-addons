@@ -1,0 +1,22 @@
+<openerp>
+	<data>
+
+		<!-- _________________________________________________________ -->
+		<!-- Partner form with edi documents page -->
+
+		<record id="eint_res_partner_with_edi_documents_page"
+			model="ir.ui.view">
+			<field name="name">Inherit res_partner form: e-integration</field>
+			<field name="model">res.partner</field>
+			<field name="inherit_id" ref="base.view_partner_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//page[@name='sales_purchases']" position="after">
+					<page string="EDI Document Partners" name="edi_document_partners">
+						<field name="edi_document_partner_ids" nolabel="1" />
+					</page>
+				</xpath>
+			</field>
+		</record>
+
+	</data>
+</openerp>

@@ -1,0 +1,56 @@
+<openerp>
+	<data>
+
+		<!-- ______________________________________________________________________ -->
+		<!-- FormView for edi_document_partner										-->
+
+		<record id="edi_document_partner_form" model="ir.ui.view">
+			<field name="name">e-integration: EDI document partner form</field>
+			<field name="model">edi.document.partner</field>
+			<field name="type">form</field>
+			<field name="priority">20</field>
+			<field name="arch" type="xml">
+				<form string="EDI Document Partner">
+					<sheet>
+						<group>
+							<field name="name" readonly="1" />
+							<field name="partner_id" />
+							<field name="gln" />
+						</group>
+					</sheet>
+					<div class="oe_chatter">
+	                    <field name="message_follower_ids" widget="mail_followers" help="Follow this project to automatically track the events associated to tasks and issues of this project." groups="base.group_user"/>
+	                    <field name="message_ids" widget="mail_thread"/>
+	                </div>
+				</form>
+			</field>
+		</record>
+
+		<!-- ______________________________________________________________________ -->
+		<!-- TreeView for edi_document_partner										-->
+
+		<record id="edi_document_partner_tree" model="ir.ui.view">
+			<field name="name">e-integration: EDI document partner tree</field>
+			<field name="model">edi.document.partner</field>
+			<field name="type">tree</field>
+			<field name="priority">20</field>
+			<field name="arch" type="xml">
+				<tree string="EDI Document Partners">
+					<field name="name" readonly="1" />
+					<field name="partner_id" />
+					<field name="gln" />
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_list_edi_document_partner">
+				<field name="name">EDI Document Partners Overview</field>
+				<field name="res_model">edi.document.partner</field>
+				<field name="view_mode">tree,form</field>
+			</record>
+
+		<menuitem id="menu_edi_document_partners" parent="eintegration_edi.menu_edi_messages_management"
+				name="EDI Document Partners" sequence="5" action="action_list_edi_document_partner" />
+
+	</data>
+</openerp>

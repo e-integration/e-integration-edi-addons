@@ -1,0 +1,31 @@
+<openerp>
+	<data noupdate="1">
+		<record model="edi.communication" id="edi_communication_as2">
+			<field name="name">AS2</field>
+		</record>
+		<record model="edi.communication" id="edi_communication_ftp_passive">
+			<field name="name">FTP passive</field>
+			<field name="description">You upload and download from e-integration.</field>
+		</record>
+		<record model="edi.communication" id="edi_communication_ftp_active">
+			<field name="name">FTP active</field>
+			<field name="description">e-integration uploads and downloads from you.</field>
+		</record>
+		<record model="edi.communication" id="edi_communication_ftp_active_active">
+			<field name="name">FTP active/active</field>
+			<field name="description">Mutually upload files.</field>
+		</record>
+		<record model="edi.communication" id="edi_communication_oftp">
+			<field name="name">OFTP</field>
+		</record>
+		<record model="edi.communication" id="edi_communication_sftp">
+			<field name="name">SFTP</field>
+		</record>
+		<record model="edi.communication" id="edi_communication_smtp">
+			<field name="name">SMTP</field>
+		</record>
+		<record model="edi.communication" id="edi_communication_x400">
+			<field name="name">X.400</field>
+		</record>
+	</data>
+</openerp>

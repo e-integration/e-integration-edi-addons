@@ -1,0 +1,20 @@
+<openerp>
+	<data noupdate="1">
+
+		<!-- ______________________________________________________________________ -->
+		<!-- Cron job template(s) to send EDI documents via email			        -->
+
+		<record model="ir.cron" id="cron_eintegration_send_edi_documents">
+			<field name="name">Send EDI documents via email</field>
+			<field name="active" eval="False" />
+			<field name="interval_number" eval="30" />
+			<field name="interval_type">minutes</field>
+			<field name="numbercall" eval="-1" />
+			<field name="doall" eval="False" />
+			<field name="model">edi.document</field>
+			<field name="function">cron_send_edi_documents</field>
+			<field name="args">()</field>
+		</record>
+
+	</data>
+</openerp>
