@@ -69,4 +69,6 @@
     'qweb': [
              'static/src/xml/templates.xml',
              ],
+
+    'images': ['static/description/main_screenshot.png'],
 }
