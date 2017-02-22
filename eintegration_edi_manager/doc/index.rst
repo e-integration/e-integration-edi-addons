@@ -68,6 +68,3 @@ Outgoing Email With The EDI Document
 ''''''''''''''''''''''''''''''''''''
 
 The recipients of EDI documents receive an email with an xml file which contains the data from the source invoice.
-
-.. figure:: edi_mail.png
-   :align: left
