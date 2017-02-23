@@ -34,6 +34,31 @@ Every contact in Odoo can have multiple EDI documents partners with different GL
 .. figure:: edi_recipients.png
    :align: left
 
+The CRON Job To Send EDI Documents
+''''''''''''''''''''''''''''''''''
+
+All EDI Documents in the "To Be Sent" stage are automatically processed and sent by a CRON job. To configure it a user with "Administration" access rights is necessary. Next the developer mode in Odoo has to be activated by the following procedure.
+
+1. Click on your user name in the top right corner to access the drop down menu.
+2. Select the "About OpenERP" option.
+3. Click on the "Activate the developer mode" button in the displayed pop up dialog.
+
+.. figure:: odoo_about.png
+   :align: left
+
+The CRON job can be found in "Settings -> Automation -> Scheduled Actions -> Send EDI documents via email". The CRON job is inactive by default and can be activated here.
+
+.. figure:: edi_cron.png
+   :align: left
+
+Target Email Address
+''''''''''''''''''''
+
+All outgoing EDI documents are sent to this address. To change it the "Administration" access rights and the "Developer mode" are required as well. The parameter can be accessed under "Settings -> Parameters -> System Parameters -> eintegration.edi_recipient_email_address"
+
+.. figure:: edi_email_address.png
+   :align: left
+
 Sending EDI Documents
 ---------------------
 
