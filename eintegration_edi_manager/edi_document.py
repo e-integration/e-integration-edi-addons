@@ -29,7 +29,7 @@ class edi_document(models.Model):
     @api.one
     def send_document(self):
         ir_attachment_obj = self.env['ir.attachment']
-        mail_template_obj = self.env['mail.template']
+        mail_template_obj = self.env['email.template']
         mail_mail_obj = self.env['mail.mail']
         ir_model_data_obj = self.env['ir.model.data']
         sent_stage = self.env.ref('eintegration_edi_manager.edi_document_stage_tt_sent')
