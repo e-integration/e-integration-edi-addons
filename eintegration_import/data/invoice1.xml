@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<openerp>
+	<data>
+
+		<record id="invoice_2" model="account.invoice" context="{'mail_create_nosubscribe':True,'mail_notify_noemail':True}">
+			<field name="name">test2</field>
+			<field name="partner_id" search="[('ref','=','10816')]"/>
+
+			<field name="journal_id"  search="[('code','=','VK')]"/>
+            <field name="company_id"  ref="base.main_company"/>
+            <field name="currency_id" ref="base.EUR"/>
+
+			<field name="account_id" search="[('code','=','1206')]"/>
+			<field name="period_id" search="[('name','=','12/2014')]"/>
+		</record>
+		<record id="invoice_2_line_1" model="account.invoice.line">
+            <field name="invoice_id" ref="invoice_2"/>
+            <field name="product_id" search="[('default_code','=','SUP-02002')]"/>
+            <field name="account_analytic_id" search="[('efa_kunr','=','10816'),('projecttype','=','B')]"/>
+            
+			<field name="name">test222</field>
+            <field name="price_unit">642</field>
+            <field name="quantity">5</field>
+		</record>
+		<record id="invoice_2_line_2" model="account.invoice.line">
+            <field name="invoice_id" ref="invoice_2"/>
+			<field name="name">test2</field>
+            <field name="account_analytic_id" search="[('efa_kunr','=','10816'),('projecttype','=','B')]"/>
+		</record>
+        <function model="account.invoice" name="setup_invoice_after_import">
+            <!-- ids = -->                   <value eval="[ref('invoice_2')]"/>
+        </function>
+		
+
+		<record id="invoice_3" model="account.invoice" context="{'mail_create_nosubscribe':True,'mail_notify_noemail':True}">
+			<field name="name">test3</field>
+			<field name="partner_id" search="[('ref','=','10312'),('is_company','=',True)]"/>
+
+			<field name="is_intermediate_invoice">operations</field>
+			<field name="account_id" search="[('code','=','1206')]"/>
+		</record>
+		<record id="invoice_3_line_1" model="account.invoice.line">
+            <field name="invoice_id" ref="invoice_3"/>
+            <field name="product_id" search="[('default_code','=','SUP-02002')]"/>
+            <field name="account_analytic_id" search="[('efa_kunr','=','10312'),('projecttype','=','B')]"/>
+            
+			<field name="name">test333</field>
+            <field name="price_unit">6654</field>
+            <field name="quantity">15</field>
+		</record>
+		<record id="invoice_3_line_2" model="account.invoice.line">
+            <field name="invoice_id" ref="invoice_3"/>
+			<field name="name">test3</field>
+            <field name="account_analytic_id" search="[('efa_kunr','=','10312'),('projecttype','=','B')]"/>
+		</record>
+        <function model="account.invoice" name="setup_invoice_after_import">
+            <!-- ids = -->                   <value eval="[ref('invoice_3')]"/>
+        </function>
+		
+	</data>
+</openerp>
+
