@@ -14,7 +14,7 @@ class account_invoice_extensions(models.Model):
     @api.one
     @api.depends('partner_id')
     def _get_customer_company_id(self):
-        self.customer_company_id = self.partner_id.parent_id.id
+        self.customer_company_id = self.partner_id.parent_id.id or self.partner_id.id
 
     @api.one
     def _compute_edi_document_ids(self):
