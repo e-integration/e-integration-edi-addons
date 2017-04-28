@@ -42,8 +42,8 @@
 			<field name="view_mode">tree,form</field>
 		</record>
 		
-		<menuitem id="menu_edi_communication" parent="menu_edi_messages_management"
-			name="EDI Communication Types" sequence="5" action="action_list_edi_communication" />	
+		<menuitem id="menu_edi_communication" parent="menu_edi"
+			name="EDI Communication Types" sequence="20" action="action_list_edi_communication" />	
 
 </data>
 </openerp>

@@ -51,11 +51,51 @@
 			<field name="view_mode">tree,form</field>
 		</record>
 
+		<record model="ir.actions.act_window" id="action_list_edi_message_types">
+			<field name="name">EDI Message Types</field>
+			<field name="res_model">edi.message.type</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<record model="ir.actions.act_window" id="action_list_edi_message_organisations">
+			<field name="name">EDI Message Organisations</field>
+			<field name="res_model">edi.message.organisation</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<record model="ir.actions.act_window" id="action_list_edi_message_formats">
+			<field name="name">EDI Message Formats</field>
+			<field name="res_model">edi.message.format</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<record model="ir.actions.act_window" id="action_list_edi_message_versions">
+			<field name="name">EDI Message Versions</field>
+			<field name="res_model">edi.message.version</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<record model="ir.actions.act_window" id="action_list_edi_message_variants">
+			<field name="name">EDI Message Variants</field>
+			<field name="res_model">edi.message.variant</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+
 		<menuitem name="EDI" id="root_menu_edi" sequence="450" />
-		<menuitem name="EDI" id="menu_edi_messages_management"
-			parent="root_menu_edi" sequence="10" />
-		<menuitem id="menu_edi_messages" parent="menu_edi_messages_management"
-			name="EDI Messages" sequence="5" action="action_list_edi_messages" />
+		
+		<menuitem id="menu_edi"          name="EDI"          parent="root_menu_edi" sequence="10" />
+		<menuitem id="menu_edi_messages" name="EDI Messages" parent="menu_edi"      sequence="10" 
+			action="action_list_edi_messages" />
+
+		<menuitem id="menu_edi_messages_details" name="EDI Message Details" parent="menu_edi" sequence="15" />
+		<menuitem id="menu_edi_message_types"    name="EDI Message Types"   parent="menu_edi_messages_details"
+			sequence="10" action="action_list_edi_message_types" />
+		<menuitem id="menu_edi_message_organisation" name="EDI Message Organisations"   parent="menu_edi_messages_details"
+			sequence="20" action="action_list_edi_message_organisations" />
+		<menuitem id="menu_edi_message_formats"  name="EDI Message Formats" parent="menu_edi_messages_details"
+			sequence="30" action="action_list_edi_message_formats" />
+		<menuitem id="menu_edi_message_versions" name="EDI Message Versions" parent="menu_edi_messages_details"
+			sequence="40" action="action_list_edi_message_versions" />
+		<menuitem id="menu_edi_message_variants" name="EDI Message Variants" parent="menu_edi_messages_details"
+			sequence="50" action="action_list_edi_message_variants" />
+
 
 	</data>
 </openerp>
