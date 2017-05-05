@@ -101,14 +101,14 @@ class edi_document(models.Model):
                 related_object = self._get_attr_value(related_object, element_name)[0]
             related_fields = related_object.fields_get(False)
             for k, v in related_fields.iteritems():
-                if not 'relation' in v:
+                if self._is_basic_and_exportable(v):
                     exported_field_names.append(exported_field.name + '/' + k)
                     names_dict[top_element_name].append(exported_field.name + '/' + k)
 
         #add the basic field from the source object into the list
         basic_fields = source_object.fields_get(False)
         for k, v in basic_fields.iteritems():
-            if not 'relation' in v:
+            if self._is_basic_and_exportable(v):
                 exported_field_names.append(k)
                 names_dict[k] = [k]
 
@@ -119,6 +119,16 @@ class edi_document(models.Model):
                 export_data.append({'names': v, 'data': temp_data_item})
 
         return export_data
+
+    def _is_basic_and_exportable(self, field_attributes):
+        """
+        Check if the field is non relation (basic) and exportable.
+
+        :param field_attributes: a dictionary containing the field attributes
+        """
+        # If the 'exportable' attribute is missing then the field is exportable. The attribute is always present for fields which are not exportable.
+        is_basic_and_exportable = not 'relation' in field_attributes and field_attributes.get('exportable',True)
+        return is_basic_and_exportable
 
     def _create_xml_content(self, export_data):
         """
