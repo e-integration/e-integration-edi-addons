@@ -28,3 +28,8 @@ class account_invoice_extensions(models.Model):
     def create_edi_document(self):
         edi_document_obj = self.env['edi.document']
         edi_document_obj.create_edi_document(self, self.company_id.partner_id)
+
+    @api.multi
+    def create_edi_documents(self):
+        for account_invoice_id in self:
+            account_invoice_id.create_edi_document()

@@ -256,7 +256,7 @@ class edi_document(models.Model):
         to_be_sent_stage = self.env.ref('eintegration_edi_manager.edi_document_stage_tt_to_be_sent')
         model_name = res_object._model._name
         recipient = res_object.edi_recipient_id
-        sender = self._get_document_partner(partner_id)
+        sender = self.get_document_partner(partner_id)
         if not sender:
             raise ValidationError(_('No GLN found for invoice issuer: %s')%(partner_id.name, ))
         edi_template = edi_template_obj.search([('model_name', '=', model_name)])
@@ -272,23 +272,26 @@ class edi_document(models.Model):
                                 })
         res_object.message_post(_('EDI Document created'))
 
-    def _get_document_partner(self, partner_id):
+    @api.model
+    def get_document_partner(self, partner_id):
         edi_document_partner_obj = self.env['edi.document.partner']
-        document_partner = False
-        res_partner_id = False
-        gln = False
-        if not partner_id.edi_document_partner_ids and getattr(partner_id,'iln', False):
+        edi_document_partner_ids = partner_id.edi_document_partner_ids or partner_id.parent_id.edi_document_partner_ids
+        edi_document_partner_id = False
+        company_id = False
+        if not edi_document_partner_ids:
             if partner_id.is_company:
-                gln = partner_id.iln
-                res_partner_id = partner_id
+                company_id = partner_id
+            elif partner_id.parent_id:
+                company_id = partner_id.parent_id
             else:
-                gln = partner_id.parent_id.iln or False
-                res_partner_id = partner_id.parent_id or False
-            document_partner = edi_document_partner_obj.create({
-                                                         'name': partner_id.name,
-                                                         'partner_id': res_partner_id.id,
-                                                         'gln': gln,
+                raise ValidationError(_('No company contact found for %s.')%partner_id.name)
+            if not company_id.iln:
+                raise ValidationError(_('No GLN found for %s.')%(company_id.name))
+            edi_document_partner_id = edi_document_partner_obj.create({
+                                                         'name': company_id.name,
+                                                         'partner_id': company_id.id,
+                                                         'gln': company_id.iln,
                                                          })
         else:
-            document_partner = partner_id.edi_document_partner_ids[0] if partner_id.edi_document_partner_ids else None
-        return document_partner
+            edi_document_partner_id = edi_document_partner_ids[0]
+        return edi_document_partner_id
