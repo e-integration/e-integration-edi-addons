@@ -295,8 +295,8 @@ class edi_document(models.Model):
                 company_id = partner_id.parent_id
             else:
                 raise ValidationError(_('No company contact found for %s.')%partner_id.name)
-            if not company_id.iln:
-                raise ValidationError(_('No GLN found for %s.')%(company_id.name))
+            if not hasattr(company_id, 'iln') or not company_id.iln:
+                raise ValidationError(_('No GLN found for %s. Please create a valid EDI recipient first.')%(company_id.name))
             edi_document_partner_id = edi_document_partner_obj.create({
                                                          'name': company_id.name,
                                                          'partner_id': company_id.id,
