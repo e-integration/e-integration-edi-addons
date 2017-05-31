@@ -14,7 +14,7 @@ class account_invoice_extensions(models.Model):
     @api.one
     @api.depends('partner_id')
     def _get_customer_company_id(self):
-        self.customer_company_id = self.partner_id.parent_id.id
+        self.customer_company_id = self.partner_id.parent_id.id or self.partner_id.id
 
     @api.one
     def _compute_edi_document_ids(self):
@@ -28,3 +28,8 @@ class account_invoice_extensions(models.Model):
     def create_edi_document(self):
         edi_document_obj = self.env['edi.document']
         edi_document_obj.create_edi_document(self, self.company_id.partner_id)
+
+    @api.multi
+    def create_edi_documents(self):
+        for account_invoice_id in self:
+            account_invoice_id.create_edi_document()

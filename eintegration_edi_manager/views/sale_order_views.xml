@@ -18,7 +18,7 @@
 					<field name="customer_company_id" invisible="1" />
 					<field name="edi_recipient_id"
 						attrs="{'readonly':[('state', 'not in', ['draft','open'])]}"
-						domain="[('partner_id.parent_id','=', customer_company_id)]" />
+						domain="[('partner_id.id','=', customer_company_id)]" />
 				</xpath>
 				<xpath expr="//notebook" position="inside">
 					<page string="EDI Documents" groups="base.group_user"

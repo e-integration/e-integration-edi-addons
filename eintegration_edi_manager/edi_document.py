@@ -101,14 +101,14 @@ class edi_document(models.Model):
                 related_object = self._get_attr_value(related_object, element_name)[0]
             related_fields = related_object.fields_get(False)
             for k, v in related_fields.iteritems():
-                if not 'relation' in v:
+                if self._is_basic_and_exportable(v):
                     exported_field_names.append(exported_field.name + '/' + k)
                     names_dict[top_element_name].append(exported_field.name + '/' + k)
 
         #add the basic field from the source object into the list
         basic_fields = source_object.fields_get(False)
         for k, v in basic_fields.iteritems():
-            if not 'relation' in v:
+            if self._is_basic_and_exportable(v):
                 exported_field_names.append(k)
                 names_dict[k] = [k]
 
@@ -119,6 +119,16 @@ class edi_document(models.Model):
                 export_data.append({'names': v, 'data': temp_data_item})
 
         return export_data
+
+    def _is_basic_and_exportable(self, field_attributes):
+        """
+        Check if the field is non relation (basic) and exportable.
+
+        :param field_attributes: a dictionary containing the field attributes
+        """
+        # If the 'exportable' attribute is missing then the field is exportable. The attribute is always present for fields which are not exportable.
+        is_basic_and_exportable = not 'relation' in field_attributes and field_attributes.get('exportable',True)
+        return is_basic_and_exportable
 
     def _create_xml_content(self, export_data):
         """
@@ -256,7 +266,7 @@ class edi_document(models.Model):
         to_be_sent_stage = self.env.ref('eintegration_edi_manager.edi_document_stage_tt_to_be_sent')
         model_name = res_object._model._name
         recipient = res_object.edi_recipient_id
-        sender = self._get_document_partner(partner_id)
+        sender = self.get_document_partner(partner_id)
         if not sender:
             raise ValidationError(_('No GLN found for invoice issuer: %s')%(partner_id.name, ))
         edi_template = edi_template_obj.search([('model_name', '=', model_name)])
@@ -272,23 +282,26 @@ class edi_document(models.Model):
                                 })
         res_object.message_post(_('EDI Document created'))
 
-    def _get_document_partner(self, partner_id):
+    @api.model
+    def get_document_partner(self, partner_id):
         edi_document_partner_obj = self.env['edi.document.partner']
-        document_partner = False
-        res_partner_id = False
-        gln = False
-        if not partner_id.edi_document_partner_ids and getattr(partner_id,'iln', False):
+        edi_document_partner_ids = partner_id.edi_document_partner_ids or partner_id.parent_id.edi_document_partner_ids
+        edi_document_partner_id = False
+        company_id = False
+        if not edi_document_partner_ids:
             if partner_id.is_company:
-                gln = partner_id.iln
-                res_partner_id = partner_id
+                company_id = partner_id
+            elif partner_id.parent_id:
+                company_id = partner_id.parent_id
             else:
-                gln = partner_id.parent_id.iln or False
-                res_partner_id = partner_id.parent_id or False
-            document_partner = edi_document_partner_obj.create({
-                                                         'name': partner_id.name,
-                                                         'partner_id': res_partner_id.id,
-                                                         'gln': gln,
+                raise ValidationError(_('No company contact found for %s.')%partner_id.name)
+            if not hasattr(company_id, 'iln') or not company_id.iln:
+                raise ValidationError(_('No GLN found for %s. Please create a valid EDI recipient first.')%(company_id.name))
+            edi_document_partner_id = edi_document_partner_obj.create({
+                                                         'name': company_id.name,
+                                                         'partner_id': company_id.id,
+                                                         'gln': company_id.iln,
                                                          })
         else:
-            document_partner = partner_id.edi_document_partner_ids[0] if partner_id.edi_document_partner_ids else None
-        return document_partner
+            edi_document_partner_id = edi_document_partner_ids[0]
+        return edi_document_partner_id

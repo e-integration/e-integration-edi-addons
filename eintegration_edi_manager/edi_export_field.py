@@ -8,5 +8,5 @@ class edi_export_field(models.Model):
     _description = 'Fields selected to be sent via EDI.'
 
     name = fields.Char()
-    display_name = fields.Char()
+    display_name = fields.Char(string="Display Name")
     edi_template_id = fields.Many2one('edi.template')

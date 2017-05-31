@@ -51,9 +51,9 @@
 				<field name="priority">20</field>
 				<field name="arch" type="xml">
 					<tree string="EDI Documents" create="false">
-						<field name="id" groups="base.group_erp_manager" />
-						<field name="model" groups="base.group_erp_manager" />
-						<field name="res_id" groups="base.group_erp_manager" />
+						<field name="id" groups="eintegration_edi.group_edi_admin" />
+						<field name="model" groups="eintegration_edi.group_edi_admin" />
+						<field name="res_id" groups="eintegration_edi.group_edi_admin" />
 						<field name="stage_id" />
 						<field name="sender" />
 						<field name="recipient" />
@@ -68,7 +68,7 @@
 				<field name="view_mode">tree,form</field>
 			</record>
 
-			<menuitem id="menu_edi_documents" parent="eintegration_edi.menu_edi_messages_management"
+			<menuitem id="menu_edi_documents" parent="eintegration_edi.menu_edi"
 				name="EDI Documents" sequence="5" action="action_list_edi_document" />
 
 			<record id="action_send_edi_documents" model="ir.actions.server">

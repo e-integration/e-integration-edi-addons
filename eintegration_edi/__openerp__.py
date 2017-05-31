@@ -46,6 +46,7 @@
     'data': [
              'views/edi_message_views.xml',
              'views/edi_communication_views.xml',
+             'security/security.xml',
              'security/ir.model.access.csv',
              'data/edi_communication_data.xml',
     ],

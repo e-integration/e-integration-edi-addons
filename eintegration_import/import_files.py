@@ -37,7 +37,7 @@ class ImportFiles(http.Controller):
 
     
 
-    @http.route('/import', type='http', auth='user', methods=['POST'])
+    @http.route('/eintegration_import/api/import', type='http', auth='user', methods=['POST'])
     def import_files(self, module, data_file):
 
         try:
