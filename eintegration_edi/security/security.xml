@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="1">
+
+        <!--
+            Users Groups
+        -->
+        <record model="res.groups" id="group_edi_admin">
+            <field name="name">EDI Administration</field>
+        </record>
+	</data>
+</openerp>

@@ -4,4 +4,4 @@ rm -f .odoo-session-cookie
 
 curl -v -c .odoo-session-cookie -F login="admin" -F key="admin" -F db="eint-prod-20160915-2" -F redirect="/import" http://localhost:8069/login
 
-curl -v -b .odoo-session-cookie -F module="xyz" -F data_file=@$1 http://localhost:8069/import
+curl -v -b .odoo-session-cookie -F module="xyz" -F data_file=@$1 http://localhost:8069/eintegration_import/api/import
