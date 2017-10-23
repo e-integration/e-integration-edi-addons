@@ -40,4 +40,39 @@
 		    </tr>
 		</table>
 	</t>
+	<table t-name="object_fields_tree"
+		id="field-tree-structure" class="oe_export_fields_selector_export"
+		cellspacing="0" cellpadding="0">
+			<tr>
+				<th class="oe_export_tree_header"> Name </th>
+			</tr>
+		<t t-call="object_fields_tree.children"/>
+	</table>
+	<tr t-name="object_fields_tree.children"
+		t-foreach="fields" t-as="field"
+		t-att-id="'treerow-' + field.id" class="oe_export_row">
+		<td>
+			<table class="tree_grid" border="0">
+				<tr class="oe_export_row">
+					<t t-foreach="(field.id).split('/')" t-as="level" >
+						<t t-if="(field.id).split('/')[0] != level">
+							<td width="18" t-translation="off">&amp;nbsp;</td>
+						</t>
+					</t>
+					<td valign="top" align="left" style="cursor: pointer;" width="18">
+						<t t-if="field.children">
+							<t t-if="(field.id).split('/').length != 3">
+								<img t-att-id="'parentimg-' + field.id" t-att-src='_s + "/web/static/src/img/expand.gif"' width="16" height="16" border="0"/>
+							</t>
+						</t>
+					</td>
+					<td id="tree-column" valign="middle" align="left" style="cursor: pointer;">
+						<a t-att-id="'export-' + field.id"  t-att-string="field.string" href="javascript: void(0);" style="text-decoration: none;">
+							<t t-esc="field.string"/>
+						</a>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
 </templates>
