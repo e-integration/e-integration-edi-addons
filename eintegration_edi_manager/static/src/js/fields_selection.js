@@ -140,9 +140,9 @@ openerp.eintegration_edi_manager = function(instance, local) {
 	            var current_tr = self.$el.find("tr[id='treerow-" + after + "']");
 	            current_tr.addClass('open');
 	            current_tr.find('img').attr('src','/web/static/src/img/collapse.gif');
-	            current_tr.after(QWeb.render('ExportTreeView-Secondary.children', {'fields': result}));
+	            current_tr.after(QWeb.render('object_fields_tree.children', {'fields': result}));
 	        } else {
-	            self.$el.find('#left_field_panel').append(QWeb.render('ExportTreeView-Secondary', {'fields': result}));
+	            self.$el.find('#left_field_panel').append(QWeb.render('object_fields_tree', {'fields': result}));
 	        }
 	        _.each(result, function(record) {
 	            if (record.required) {
